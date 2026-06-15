@@ -1,16 +1,16 @@
 <div align="center">
 
-# schema-bridge
+# schema-cast
 
 **One schema. Four outputs. Zero drift.**
 
-[![npm version](https://img.shields.io/npm/v/schema-bridge?color=red&style=flat-square)](https://www.npmjs.com/package/schema-bridge)
+[![npm version](https://img.shields.io/npm/v/schema-cast?color=red&style=flat-square)](https://www.npmjs.com/package/schema-cast)
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square)](https://www.typescriptlang.org/)
 [![Build](https://img.shields.io/github/actions/workflow/status/Demon-Die/schema-bridge/ci.yml?style=flat-square)](https://github.com/Demon-Die/schema-bridge/actions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Demon-Die/schema-bridge/pulls)
 
-Define your data model **once** in JSON or YAML — `schema-bridge` generates TypeScript types, Zod validators, Mongoose models, and PostgreSQL SQL, all kept in sync automatically.
+Define your data model **once** in JSON or YAML — `schema-cast` generates TypeScript types, Zod validators, Mongoose models, and PostgreSQL SQL, all kept in sync automatically.
 
 [Getting Started](#installation) · [CLI Reference](#cli) · [Field Types](#supported-field-types) · [Contributing](#contributing)
 
@@ -29,13 +29,13 @@ Database model → Mongoose
 Table definition → SQL
 ```
 
-They drift. They conflict. You update one and forget the rest. `schema-bridge` solves this with a single source of truth.
+They drift. They conflict. You update one and forget the rest. `schema-cast` solves this with a single source of truth.
 
 ---
 
 ## What It Generates
 
-Given one `.schema.json` file, `schema-bridge` produces:
+Given one `.schema.json` file, `schema-cast` produces:
 
 | Output | File | Description |
 |--------|------|-------------|
@@ -50,10 +50,10 @@ Given one `.schema.json` file, `schema-bridge` produces:
 
 ```bash
 # Global install (recommended for CLI use)
-npm install -g schema-bridge
+npm install -g schema-cast
 
 # Or use without installing
-npx schema-bridge generate --input ./schemas/user.schema.json --out ./generated
+npx schema-cast generate --input ./schemas/user.schema.json --out ./generated
 ```
 
 ---
@@ -84,7 +84,7 @@ Create a `user.schema.json` file:
 ### 2. Generate
 
 ```bash
-schema-bridge generate --input ./schemas/user.schema.json --out ./generated
+schema-cast generate --input ./schemas/user.schema.json --out ./generated
 ```
 
 ### 3. Use the Output
@@ -179,10 +179,10 @@ CREATE TABLE users (
 
 ```bash
 # Single file
-schema-bridge generate --input ./schemas/user.schema.json --out ./generated
+schema-cast generate --input ./schemas/user.schema.json --out ./generated
 
 # Entire directory
-schema-bridge generate --all --input ./schemas/ --out ./generated
+schema-cast generate --all --input ./schemas/ --out ./generated
 ```
 
 | Flag | Description |
@@ -194,7 +194,7 @@ schema-bridge generate --all --input ./schemas/ --out ./generated
 ### `watch` — Auto-regenerate on change
 
 ```bash
-schema-bridge watch --input ./schemas/
+schema-cast watch --input ./schemas/
 ```
 
 Only regenerates files whose schema changed — fast and non-destructive.
@@ -297,7 +297,7 @@ Please open an issue before submitting large PRs. See [CONTRIBUTING.md](./CONTRI
 
 ## Built by DemonDie
 
-`schema-bridge` is part of the [DemonDie](https://github.com/Demon-Die) open source ecosystem — a community building developer tools, web applications, AI/ML solutions, and community platforms.
+`schema-cast` is part of the [DemonDie](https://github.com/Demon-Die) open source ecosystem — a community building developer tools, web applications, AI/ML solutions, and community platforms.
 
 ---
 

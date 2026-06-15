@@ -8,7 +8,7 @@ import * as path from 'path';
 const program = new Command();
 
 program
-  .name('schema-bridge')
+  .name('schema-cast')
   .description('Generate TypeScript, Zod, Mongoose, and PostgreSQL from single schema definition.')
   .version('1.0.0');
 

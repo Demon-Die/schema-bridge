@@ -1,11 +1,27 @@
 {
-  "name": "schema-bridge",
+  "name": "schema-cast",
   "version": "1.0.0",
   "description": "Single schema definition → TypeScript + Zod + Mongoose + PostgreSQL. One source of truth.",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "schema-cast": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "typescript",
@@ -34,10 +50,5 @@
     "typescript": "^6.0.3",
     "vitest": "^4.1.9",
     "zod": "^4.4.3"
-  },
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "bin": {
-    "schema-bridge": "dist/cli.js"
   }
 }
